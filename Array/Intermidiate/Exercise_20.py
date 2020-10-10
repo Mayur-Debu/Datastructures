@@ -1,5 +1,5 @@
 '''
-Maximum profit by buying and selling a share at most twice
+Write a program to maximize the profit by buying and selling a stock at most twice a day
 '''
 
 
@@ -24,8 +24,7 @@ def maximize_profit(prices, n):
     local_minima = []
     pointer = 0
     for i in range(len(prices)):
-        local_minima.append(minima(prices,pointer))
-
+        local_minima.append(minima(prices, pointer))
 
     print(local_minima)
     print(local_maxima)

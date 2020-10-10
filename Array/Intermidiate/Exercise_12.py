@@ -1,5 +1,5 @@
 '''
-Write a program to fin the subarray with sum equal to zero
+Write a program to find the subarray with sum equal to zero
 '''
 
 

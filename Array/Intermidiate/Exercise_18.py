@@ -15,6 +15,5 @@ if __name__ == '__main__':
     arr = [None] * n
     k = int(input('ENter the value of k: '))
     occurance_of_number = n // k
-    arr = list(
-        map(int, input('Enter the elements in array:  ').strip(" ").split(" ")))
+    arr = list(map(int, input('Enter the elements in array:  ').strip(" ").split(" ")))
     print(check_occurance(arr, occurance_of_number))

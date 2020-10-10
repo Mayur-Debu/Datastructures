@@ -1,3 +1,7 @@
+'''
+Rearrange the array in alternative positive and negative element with o(1) extra space.
+'''
+
 def rearrange(arr):
     pivot=-1
     for i in range(len(arr)):

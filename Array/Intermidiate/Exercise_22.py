@@ -14,7 +14,7 @@ def minimum_jumps(arr, n):
         else:
             return 1
 
-    while (position < n-1):
+    while (position < n - 1):
 
         if (position < n):
             maximum_jump = max([arr[0], arr[position]])
@@ -25,5 +25,5 @@ def minimum_jumps(arr, n):
 
 
 if __name__ == '__main__':
-    arr = [1,3,5,8,9,2,6,7,6,8,9]
+    arr = [1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]
     print(minimum_jumps(arr, len(arr)))

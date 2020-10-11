@@ -1,5 +1,5 @@
 '''
-Find a triplet that sum to a given value
+Write a program to find a triplet that sums to a given value.
 '''
 
 

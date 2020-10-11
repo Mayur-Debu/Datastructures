@@ -4,7 +4,6 @@ Find whether an array is a subset of another array
 
 
 def subset(main_array, sub_array):
-
     for i in sub_array:
         if i in main_array:
             continue

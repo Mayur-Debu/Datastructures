@@ -1,6 +1,6 @@
-
-# Python3 program to print
-# given matrix in spiral form
+'''
+Write a program in order to print a two dimensional array in spiral form.
+'''
 
 
 def spiralPrint(m, n, a):

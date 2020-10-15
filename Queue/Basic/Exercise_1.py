@@ -45,6 +45,7 @@ class Queue:
 
 if __name__ == '__main__':
     queueObject=Queue(int(input('Enter the size of queue: ')))
+<<<<<<< HEAD
 
     while(True):
         print('1:Enqueue')
@@ -52,6 +53,15 @@ if __name__ == '__main__':
         print('3:Peek')
         print('4:Display')
         choice = int(input('Enter your choice: '))
+=======
+    print('1:Enqueue')
+    print('2:Dequeue')
+    print('3:Peek')
+    print('4:Display')
+    choice=int(input('Enter your choice: '))
+
+    while(True):
+
         if choice==1:
             queueObject.enqueue()
         elif choice==2:

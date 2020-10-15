@@ -41,7 +41,7 @@ class Queue:
             print('The queue is empty')
         else:
             for item in self.queue[self.front:self.rear]:
-                print(f'|| {item}',end=' ')
+                print(f'|| {item}', end=' ')
             print()
 
 

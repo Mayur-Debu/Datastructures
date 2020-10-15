@@ -23,9 +23,12 @@ class Queue:
         if self.front==len(self.queue):
             print('Queue Underflow')
         else:
-            print(f'The popped element from the queue is {self.queue[self.front]}')
-            self.queue[self.front]=None
-            self.front+=1
+            if self.queue[self.front]==None:
+                print('Nothing to pop')
+            else:
+                print(f'The popped element from the queue is {self.queue[self.front]}')
+                self.queue[self.front]=None
+                self.front+=1
 
     def peek(self):
         if self.front==len(self.queue):

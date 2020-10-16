@@ -1,8 +1,7 @@
 """
-write a program to implement the dequeue using the array and perform the following operations.
+write a program to implement the input restricted dequeue using the array and perform the following operations.
     1: Enqueue
-        * Enqueue at front
-        * Enqueue at rear
+        * Enqueue from only front
     2: Dequeue
         * Dequeue at front
         * Dequeue at rear
@@ -15,11 +14,8 @@ class Dequeue:
     def __init__(self):
         self.dq = []
 
-    def enqueueFront(self):
+    def enqueue(self):
         self.dq.append((input('Enter the element: ')))
-
-    def enqueueRear(self):
-        self.dq.insert(0, (input('Enter the element: ')))
 
     def dequeueFront(self):
         print(f'The popped element from the front of the dequeue is {self.dq.pop()}')
@@ -40,25 +36,22 @@ class Dequeue:
 if __name__ == '__main__':
     dq = Dequeue()
     while True:
-        print('1: Add element at front')
-        print('2: Add element at rear')
-        print('3: Remove element from front')
-        print('4: Remove element from rear')
-        print('5: Check if dequeue is empty ')
-        print('6: Size of dequeue')
+        print('1: Add element')
+        print('2: Remove element from front')
+        print('3: Remove element from rear')
+        print('4: Check if dequeue is empty ')
+        print('5: Size of dequeue')
         choice = int(input('Enter your choice: '))
 
         if choice == 1:
-            dq.enqueueFront()
+            dq.enqueue()
         elif choice == 2:
-            dq.enqueueRear()
-        elif choice == 3:
             dq.dequeueFront()
-        elif choice == 4:
+        elif choice == 3:
             dq.dequeueRear()
-        elif choice == 5:
+        elif choice == 4:
             dq.isEmpty()
-        elif choice == 6:
+        elif choice == 5:
             dq.sizeOfDequeue()
         else:
             print('Error: Wrong choice, try again!!!')

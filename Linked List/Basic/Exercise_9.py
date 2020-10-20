@@ -9,21 +9,22 @@ class Node:
 
 class CircularDoublyLinkedList:
     def __init__(self):
-        self.head=None
+        self.head=Node(None)
+        self.tail=Node(None)
+        self.head.next=self.tail
+        self.tail.next=self.head
 
     def insertAtEnd(self,data):
         node=Node(data)
-        if self.head is None:
-            self.head=node
-            node.next=node
-            node.previous=node
+        if self.head.data is None:
+            self.head=self.tail=node
+            self.head.next=self.head
+            self.head.previous=None
         else:
-            iterator=self.head
-            while iterator.next:
-                iterator=iterator.next
-            iterator.next=node
-            node.next=self.head
-            node.previous=iterator
+            self.tail.next=node
+            node.previous=self.tail
+            self.tail=node
+            self.tail.next=self.head
 
     def display(self):
         if self.head is None:
@@ -31,15 +32,14 @@ class CircularDoublyLinkedList:
         else:
             iterator=self.head
             print(iterator.data,end=' --> ')
-            iterator=iterator.next
             while iterator.next!=self.head:
-                print(iterator.data,end=' --> ')
                 iterator=iterator.next
+                print(iterator.data,end=' --> ')
             print(None)
 
 if __name__ == '__main__':
     cdll=CircularDoublyLinkedList()
     cdll.insertAtEnd(5)
     cdll.insertAtEnd(6)
-    # cdll.insertAtEnd(5)
+    cdll.insertAtEnd(5)
     cdll.display()

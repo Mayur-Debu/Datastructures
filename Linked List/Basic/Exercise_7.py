@@ -9,7 +9,7 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class CircularLinkedList:
     def __init__(self):
         self.head = Node(None)
         self.tail = Node(None)
@@ -40,7 +40,7 @@ class LinkedList:
 
 
 if __name__ == '__main__':
-    ll = LinkedList()
+    ll = CircularLinkedList()
     ll.insertAtEnd(5)
     ll.insertAtEnd(6)
     ll.display()

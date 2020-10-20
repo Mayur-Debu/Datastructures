@@ -34,9 +34,10 @@ class LinkedList:
             self.insertAtEnd(data)
 
     def maxAndMin(self):
-        maximum = self.head.data
-        minimum = self.head.data
+
         iterator = self.head
+        maximum = iterator.data
+        minimum = iterator.data
 
         while iterator:
 

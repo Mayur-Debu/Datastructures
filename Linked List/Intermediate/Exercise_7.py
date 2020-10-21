@@ -34,7 +34,7 @@ class LinkedList:
     def print(self):
         '''This function prints the linked list starting from the head till the tail.'''
         if self.head is None:
-            print('The linked list is empty')
+            print('Trying to print but, the linked list is empty')
             return
 
         iterator = self.head
@@ -45,11 +45,8 @@ class LinkedList:
         print(None)
 
     def deleteLinkList(self):
-        iterator = self.head
-        while iterator:
-            self.head = None
-            iterator = iterator.next
-        print('Link List deleted')
+        self.head = None
+        print(f'The linked list is deleted')
 
 
 if __name__ == '__main__':

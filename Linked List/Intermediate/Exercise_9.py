@@ -1,5 +1,5 @@
 """
-Write a program to remove duplicates from the sorted linked list.
+Remove Duplicates from an unsorted array.
 """
 
 
@@ -34,12 +34,17 @@ class LinkedList:
         print('Original Linked list:', end=' ')
         self.print()
         print('Altered Linked list:', end=' ')
-        self.removeDuplicates(sorted(set(string)))
+        self.removeDuplicates(string)
 
     def removeDuplicates(self, string):
         self.head = None
+        item = set()
         for data in string:
-            self.insertAtEnd(data)
+            if data in item:
+                pass
+            else:
+                item.add(data)
+                self.insertAtEnd(data)
 
     def print(self):
         '''This function prints the linked list starting from the head till the tail.'''
@@ -57,5 +62,5 @@ class LinkedList:
 
 if __name__ == '__main__':
     ll = LinkedList()
-    ll.insertList(['a','b','b','v'])
+    ll.insertList([5, 2, 2, 6, 6, 3, 1, 2])
     ll.print()

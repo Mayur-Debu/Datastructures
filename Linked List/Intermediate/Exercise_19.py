@@ -50,5 +50,5 @@ class LinkedList:
 
 if __name__ == '__main__':
     ll = LinkedList()
-    ll.insertList([1, 2, 3, 4, 5])
+    ll.insertList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     # ll.print()

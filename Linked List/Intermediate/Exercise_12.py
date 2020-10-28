@@ -23,10 +23,10 @@ class LinkedList:
             self.head = node
 
     def insertAtEnd(self):
-        iterator=self.head
+        iterator = self.head
         while iterator.next:
-            iterator=iterator.next
-        iterator.next=Node(0)
+            iterator = iterator.next
+        iterator.next = Node(0)
 
     def insertList(self, datalist):
         length = len(datalist)
@@ -45,24 +45,24 @@ class LinkedList:
 if __name__ == '__main__':
     ll1 = LinkedList()
     ll2 = LinkedList()
-    length1 = ll1.insertList([9,9,9,9])
-    length2 = ll2.insertList([9,9,9,9])
+    length1 = ll1.insertList([9, 9, 9, 9])
+    length2 = ll2.insertList([9, 9, 9, 9])
 
-    if length1==length2:
+    if length1 == length2:
         pass
     else:
-        if length1>length2:
-            for i in range(length1-length2):
+        if length1 > length2:
+            for i in range(length1 - length2):
                 ll2.insertAtEnd()
-            length2=length1
+            length2 = length1
         else:
-            for i in range(length2-length1):
+            for i in range(length2 - length1):
                 ll1.insertAtEnd()
-            length1=length2
+            length1 = length2
 
     ll1.display()
     ll2.display()
-    print(length1,length2)
+    print(length1, length2)
 
     carry = 0
     iterator1 = ll1.head

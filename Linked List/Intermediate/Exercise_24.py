@@ -55,6 +55,6 @@ class DoublyLinkedList:
 
 if __name__ == '__main__':
     ll = DoublyLinkedList()
-    ll.insertList([1, 2, 4, 5, 6, 8, 9])
+    ll.insertList(sorted([1, 2, 4, 6, 5, 8, 9]))
     ll.display()
     ll.findSum(7)

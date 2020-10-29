@@ -1,5 +1,5 @@
 """
-Write a program to find the pair that sums to a given number in doubly linked list.
+Write a program to count the number of triplets in DLL.
 """
 
 
@@ -33,17 +33,18 @@ class DoublyLinkedList:
             self.insertAtEnd(data)
 
     def findSum(self, sum):
-        firstPointer = self.head
-        secondPointer = self.tail
-        while firstPointer != secondPointer:
-            if firstPointer.data + secondPointer.data == sum:
-                print(f'{firstPointer.data, secondPointer.data}', end=',')
-                firstPointer = firstPointer.next
+        counter=0
+        iterator=self.head
+        firstPointer=iterator.next
+        while iterator.next!=self.tail:
+            if iterator.data+iterator.next.data+self.tail.data==sum:
+                counter+=1
+                break
+            else:
+                firstPointer=firstPointer.next
 
-            elif firstPointer.data + secondPointer.data > sum:
-                secondPointer = secondPointer.prev
-            elif firstPointer.data + secondPointer.data < sum:
-                firstPointer = firstPointer.next
+        print(counter)
+
 
     def display(self):
         iterator = self.head
@@ -57,4 +58,4 @@ if __name__ == '__main__':
     ll = DoublyLinkedList()
     ll.insertList(sorted([1, 2, 4, 6, 5, 8, 9]))
     ll.display()
-    ll.findSum(7)
+    ll.findSum(17)

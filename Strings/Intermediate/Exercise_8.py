@@ -14,8 +14,8 @@ def binarySubstring(string):
         elif (string[i] == "1"):
             oneCount += 1
 
-        if zeroCount == oneCount:
-            subStringCount += 1
+    if zeroCount == oneCount:
+        subStringCount += 1
 
     return subStringCount
 

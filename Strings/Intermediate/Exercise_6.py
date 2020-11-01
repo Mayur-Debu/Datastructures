@@ -13,5 +13,6 @@ def  printSubsequence(inputString,outputString):
 if __name__ == '__main__':
     inputString=input()
     outputString=""
+
     # print(inputString[1:])
     printSubsequence(inputString,outputString)

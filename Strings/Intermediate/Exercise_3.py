@@ -6,7 +6,6 @@ from itertools import permutations
 
 
 def checkForValidShuffle(string1, string2, shuffledString):
-    Permutations = []
     Permutations = permutations(string1 + string2)
 
     if shuffledString in [''.join(item) for item in Permutations]:

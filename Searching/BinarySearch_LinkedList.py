@@ -12,37 +12,40 @@ class LinkedList:
         self.head = None
         self.tail = None
 
-    def insertAtEnd(self, data):
+    def insertElement(self, data):
         node = Node(data)
 
-        if self.head == None:
-            self.head = node
+        if self.head is None:
+            self.head = self.tail = node
         else:
-            iterator = self.head
-            while iterator.next != None:
-                iterator = iterator.next
+            self.tail.next = node
             self.tail = node
             node.next = None
 
-    def insertList(self):
-        dataList = list(map(int, input('Enter the element sin linked list: ').split(',')))
-        dataList = sorted(dataList)
+    def insertList(self, dataList):
+        dataList=sorted(dataList)
+        length=len(dataList)
         for data in dataList:
-            self.insertAtEnd(data)
-        # searchNumber=int(input('Enter the number to be searched: '))
-        #
-        # low=self.head
-        # high=self.tail
+            self.insertElement(data)
+        SearchElement=int(input('Enter the Number to be searched: '))
+        high=length
+        low=1
 
-    def display(self):
+        while low<high:
+            mid=(high+low)//2
+
+
+
+    def displayLinkedList(self):
         iterator = self.head
-        while iterator.next != None:
-            print(f'{iterator.data}', end=' --> ')
+        while iterator:
+            print(f'{iterator.data}', end='-->')
             iterator = iterator.next
         print(None)
 
 
 if __name__ == '__main__':
     ll = LinkedList()
-    ll.insertList()
-    ll.display()
+    ll.insertList([12, 3, 4])
+    ll.displayLinkedList()
+

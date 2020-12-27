@@ -11,6 +11,7 @@ class StackUsingQueue:
         self.front = -1
 
     def push(self):
+
         if self.rear == self.size - 1:
             print(f'The stack\'s overflow')
         else:

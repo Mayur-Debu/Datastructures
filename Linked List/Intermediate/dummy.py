@@ -1,4 +1,12 @@
-import random
+number=input()
 
-# print(random.choice(range(5)))
-print(random.randint(1,4))
+number=[int(x) for x in number]
+even_number=[]
+
+for no in number:
+    if no%2==0:
+        even_number.append(no)
+    else:
+        pass
+
+print(sum(even_number))

@@ -18,4 +18,12 @@ def binary_search(a, key):
     return False
 
 
-print(binary_search([1, 2, 4, 5, 3], 3))
+if __name__ == '__main__':
+
+    a = list(map(int, input('Enter the list of numbers: ').strip(' ').split(' ')))
+    key = int(input('Enter the number to be searched: '))
+
+    if binary_search(a, key):
+        print('FOUND')
+    else:
+        print('NOT FOUND')

@@ -1,7 +1,7 @@
 """Implementing the linear search using the array"""
 
 def linearSearch():
-    listOfNumbers=list(map(int,input('Enter the list of Numbers').split(',')))
+    listOfNumbers=list(map(int,input('Enter the list of Numbers').strip(' ').split(' ')))
     searchNumber=int(input('Enter the Number you want to search: '))
 
     for number in listOfNumbers:

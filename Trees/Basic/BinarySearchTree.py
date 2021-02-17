@@ -1,23 +1,28 @@
-class BinarySearchTreeNode:
+"""
+Implement the binary search tree.
+"""
+
+
+class BinarySearchTree:
     def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None
 
-    def add_child(self, data):
-        if data == self.data:
-            return  # node already exist
+    def addChildren(self, child):
+        if child == self.data:
+            return
 
-        if data < self.data:
+        if child < self.data:
             if self.left:
-                self.left.add_child(data)
+                self.left.addChildren(child)
             else:
-                self.left = BinarySearchTreeNode(data)
+                self.left = BinarySearchTree(child)
         else:
             if self.right:
-                self.right.add_child(data)
+                self.right.addChildren(child)
             else:
-                self.right = BinarySearchTreeNode(data)
+                self.right = BinarySearchTree(child)
 
     def search(self, val):
         if self.data == val:
@@ -35,25 +40,25 @@ class BinarySearchTreeNode:
             else:
                 return False
 
-    def in_order_traversal(self):
+    def inOrderTraversal(self):
         elements = []
         if self.left:
-            elements += self.left.in_order_traversal()
+            elements += self.left.inOrderTraversal()
 
         elements.append(self.data)
 
         if self.right:
-            elements += self.right.in_order_traversal()
+            elements += self.right.inOrderTraversal()
 
         return elements
 
 
 def build_tree(elements):
     print("Building tree with these elements:", elements)
-    root = BinarySearchTreeNode(elements[0])
+    root = BinarySearchTree(elements[0])
 
     for i in range(1, len(elements)):
-        root.add_child(elements[i])
+        root.addChildren(elements[i])
 
     return root
 
@@ -66,4 +71,4 @@ if __name__ == '__main__':
     print("Sweden is in the list? ", country_tree.search("Sweden"))
 
     numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
-    print("In order traversal gives this sorted list:", numbers_tree.in_order_traversal())
+    print("In order traversal gives this sorted list:", numbers_tree.inOrderTraversal())

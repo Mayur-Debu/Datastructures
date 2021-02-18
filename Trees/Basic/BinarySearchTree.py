@@ -45,12 +45,28 @@ class BinarySearchTree:
         if self.left:
             elements += self.left.inOrderTraversal()
 
-        elements.append(self.data)
+        if self.data == '':
+            pass
+        else:
+            elements.append(self.data)
 
         if self.right:
             elements += self.right.inOrderTraversal()
 
         return elements
+
+    def deleteNode(self, data):
+        if data == self.data:
+            self.data = ''
+            return ''
+
+        if data < self.data:
+            if self.left:
+                return self.left.deleteNode(data)
+
+        if data > self.data:
+            if self.right:
+                return self.right.deleteNode(data)
 
 
 def build_tree(elements):
@@ -64,11 +80,12 @@ def build_tree(elements):
 
 
 if __name__ == '__main__':
-    countries = ["India", "Pakistan", "Germany", "USA", "China", "India", "UK", "USA"]
-    country_tree = build_tree(countries)
+    elements = [5, 12, 4, 3, 2, 1]
+    root = BinarySearchTree(elements[0])
 
-    print("UK is in the list? ", country_tree.search("UK"))
-    print("Sweden is in the list? ", country_tree.search("Sweden"))
+    for i in range(1, len(elements)):
+        root.addChildren(elements[i])
 
-    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
-    print("In order traversal gives this sorted list:", numbers_tree.inOrderTraversal())
+    print(root.inOrderTraversal())
+    print(root.deleteNode(3))
+    print(root.inOrderTraversal())

@@ -113,7 +113,7 @@ class BinarySearchTree:
 
 
 if __name__ == '__main__':
-    elements = [5, 12, 4, 3, 2, 1]
+    elements = [5,5,3,2,1]
     root = BinarySearchTree(elements[0])
 
     for i in range(1, len(elements)):
